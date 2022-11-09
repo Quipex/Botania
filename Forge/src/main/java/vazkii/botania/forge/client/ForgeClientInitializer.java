@@ -80,6 +80,7 @@ public class ForgeClientInitializer {
 
 	@SuppressWarnings("removal")
 	@SubscribeEvent
+	@SuppressWarnings("removal") // ItemBlockRenderTypes::setRenderLayer is deprecated
 	public static void clientInit(FMLClientSetupEvent evt) {
 		BlockRenderLayers.init(ItemBlockRenderTypes::setRenderLayer);
 		// GUIs
@@ -152,6 +153,7 @@ public class ForgeClientInitializer {
 		if (XplatAbstractions.INSTANCE.isModLoaded("ears")) {
 			EarsIntegration.register();
 		}
+		BlockRenderLayers.init(ItemBlockRenderTypes::setRenderLayer);
 	}
 
 	@SubscribeEvent
